@@ -1,11 +1,13 @@
 import React from 'react';
+import * as type from '../utils/types/types';
+import FormLogin from '../components/FormLogin';
 
-const Login = () => {
-    return (
-        <div>
-            <h1>Login</h1>
-        </div>
-    );
+const LoginPage = () => {
+    const handleSubmit = async (data: type.LoginForm) => {
+        console.log(data);
+    };
+
+    return <FormLogin onSubmit={handleSubmit} />;
 };
 
-export default Login;
+export default LoginPage;

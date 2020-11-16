@@ -26,8 +26,16 @@ export type AppProps = {
     user: User;
 };
 
-export type FormProps = {
+export type FormRequestProps = {
     onSubmit: (data: MaintenanceRequest) => void;
+};
+
+export type FormLoginProps = {
+    onSubmit: (data: LoginForm) => void;
+};
+
+export type FormSignUpProps = {
+    onSubmit: (data: SignupForm) => void;
 };
 
 export interface MaintenanceRequest {

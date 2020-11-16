@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import * as type from '../utils/types/types';
 
-const FormRequest: React.FC<type.FormProps> = ({ onSubmit }) => {
+const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
     const initialState = {
         unitNumber: '',
         name: '',

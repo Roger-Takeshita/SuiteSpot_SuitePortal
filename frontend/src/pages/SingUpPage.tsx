@@ -1,11 +1,13 @@
 import React from 'react';
+import * as type from '../utils/types/types';
+import FormSignUp from '../components/FormSignUp';
 
-const SingUp = () => {
-    return (
-        <div>
-            <h1>SingUp</h1>
-        </div>
-    );
+const SingUpPage = () => {
+    const handleSubmit = async (data: type.SignupForm) => {
+        console.log(data);
+    };
+
+    return <FormSignUp onSubmit={handleSubmit} />;
 };
 
-export default SingUp;
+export default SingUpPage;

@@ -1,3 +1,4 @@
+.login-form,
 .request-form
   margin: 20px
   min-width: 10%
@@ -49,20 +50,36 @@
     top: -10px
     font-size: 10px
     color: $color-primary
+  &__cta
+    flex-grow: 1
+    margin-top: 15px
+    display: flex
+    justify-content: flex-end
+
+    & > :last-child
+      margin-left: 5px
 
 .btn
   background-color: $color-orange
+  text-decoration: none
   color: $color-white
   border: none
   white-space: nowrap
   outline: none
   min-width: 64px
   margin: 0
+  display: inline-block
   line-height: 36px
+  height: 36px
   padding: 0 16px
   border-radius: 4px
   overflow: visible
   cursor: pointer
   font-size: 14px
   font-weight: 500
-  margin-top: 15px
+
+  &--signup
+    background-color: $color-blue
+  &--disabled
+    background-color: $color-gray
+    cursor: not-allowed

@@ -24,6 +24,7 @@ body,
   width: 100%;
 }
 
+.login-form,
 .request-form {
   margin: 20px;
   min-width: 10%;
@@ -35,17 +36,21 @@ body,
   margin: 20px auto;
 }
 
+.login-form h2,
 .request-form h2 {
   font-weight: 400;
   text-align: center;
 }
 
+.login-form__input-container,
 .request-form__input-container {
   margin-top: 20px;
   position: relative;
 }
 
-.request-form__input, .request-form__select {
+.login-form__input, .login-form__select,
+.request-form__input,
+.request-form__select {
   display: block;
   border: none;
   border-bottom: 1.8px solid #7e7e7e;
@@ -55,6 +60,7 @@ body,
   outline: none;
 }
 
+.login-form__label,
 .request-form__label {
   display: block;
   font-size: 14px;
@@ -67,61 +73,113 @@ body,
   pointer-events: none;
 }
 
+.login-form__input:focus,
 .request-form__input:focus {
   border-bottom: 1.8px solid #045e5e;
 }
 
+.login-form__input:focus::-webkit-input-placeholder,
 .request-form__input:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
+.login-form__input:focus:-ms-input-placeholder,
 .request-form__input:focus:-ms-input-placeholder {
   opacity: 0;
 }
 
+.login-form__input:focus::-ms-input-placeholder,
 .request-form__input:focus::-ms-input-placeholder {
   opacity: 0;
 }
 
+.login-form__input:focus::placeholder,
 .request-form__input:focus::placeholder {
   opacity: 0;
 }
 
-.request-form__input:placeholder-shown + .request-form__label {
+.login-form__input:placeholder-shown + .login-form__label,
+.request-form__input:placeholder-shown + .login-form__label, .login-form__input:placeholder-shown +
+.request-form__label,
+.request-form__input:placeholder-shown +
+.request-form__label {
   opacity: 0;
 }
 
-.request-form__select:not(:placeholder-shown) + .request-form__label,
-.request-form__input:not(:placeholder-shown) + .request-form__label {
+.login-form__select:not(:placeholder-shown) + .login-form__label,
+.login-form__input:not(:placeholder-shown) + .login-form__label,
+.request-form__select:not(:placeholder-shown) + .login-form__label,
+.request-form__input:not(:placeholder-shown) + .login-form__label, .login-form__select:not(:placeholder-shown) +
+.request-form__label,
+.login-form__input:not(:placeholder-shown) +
+.request-form__label,
+.request-form__select:not(:placeholder-shown) +
+.request-form__label,
+.request-form__input:not(:placeholder-shown) +
+.request-form__label {
   opacity: 1;
   top: -10px;
   font-size: 10px;
   color: #089a99;
 }
 
-.request-form__input:focus + .request-form__label {
+.login-form__input:focus + .login-form__label,
+.request-form__input:focus + .login-form__label, .login-form__input:focus +
+.request-form__label,
+.request-form__input:focus +
+.request-form__label {
   opacity: 1;
   top: -10px;
   font-size: 10px;
   color: #089a99;
+}
+
+.login-form__cta,
+.request-form__cta {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.login-form__cta > :last-child,
+.request-form__cta > :last-child {
+  margin-left: 5px;
 }
 
 .btn {
   background-color: #e66317;
+  text-decoration: none;
   color: #fff;
   border: none;
   white-space: nowrap;
   outline: none;
   min-width: 64px;
   margin: 0;
+  display: inline-block;
   line-height: 36px;
+  height: 36px;
   padding: 0 16px;
   border-radius: 4px;
   overflow: visible;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  margin-top: 15px;
+}
+
+.btn--signup {
+  background-color: #004fa8;
+}
+
+.btn--disabled {
+  background-color: #7e7e7e;
+  cursor: not-allowed;
 }
 
 .navbar {
