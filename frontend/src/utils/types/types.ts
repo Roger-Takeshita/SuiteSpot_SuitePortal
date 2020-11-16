@@ -26,6 +26,14 @@ export type AppProps = {
     user: User;
 };
 
+export type SignUpPageProps = {
+    signUpUser: (data: SignupForm) => void;
+};
+
+export type LoginPageProps = {
+    loginUser: (data: LoginForm) => void;
+};
+
 export type FormRequestProps = {
     onSubmit: (data: MaintenanceRequest) => void;
 };

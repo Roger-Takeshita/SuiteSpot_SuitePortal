@@ -27,7 +27,7 @@ export const loginUser = (data: type.LoginForm) => {
     };
 };
 
-export const signUpUser = (data: type.LoginForm) => {
+export const signUpUser = (data: type.SignupForm) => {
     const url = 'http://localhost:3001/api/users/singup';
 
     return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
