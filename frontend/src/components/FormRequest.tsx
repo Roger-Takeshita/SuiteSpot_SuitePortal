@@ -3,14 +3,14 @@ import * as type from '../utils/types/types';
 
 const FormRequest: React.FC<type.FormProps> = ({ onSubmit }) => {
     const initialState = {
-        apartment: '',
+        unitNumber: '',
         name: '',
         email: '',
         serviceType: 'general',
         summary: '',
         details: '',
     };
-    const [form, setForm] = useState<type.Form>(initialState);
+    const [form, setForm] = useState<type.MaintenanceRequest>(initialState);
 
     const handleChange = ({
         target: { name, value },
@@ -37,12 +37,12 @@ const FormRequest: React.FC<type.FormProps> = ({ onSubmit }) => {
                     <input
                         className="request-form__input"
                         type="text"
-                        name="apartment"
-                        value={form.apartment}
+                        name="unitNumber"
+                        value={form.unitNumber}
                         onChange={handleChange}
                         placeholder="Apartment Unit #"
                     />
-                    <label className="request-form__label" htmlFor="apartment">
+                    <label className="request-form__label" htmlFor="unitNumber">
                         Apartment Unit #
                     </label>
                 </div>

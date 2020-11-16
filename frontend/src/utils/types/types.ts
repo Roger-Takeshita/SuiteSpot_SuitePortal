@@ -27,14 +27,14 @@ export type AppProps = {
 };
 
 export type FormProps = {
-    onSubmit: (data: Form) => void;
+    onSubmit: (data: MaintenanceRequest) => void;
 };
 
-export type Form = {
-    apartment: string;
+export interface MaintenanceRequest {
+    unitNumber: string;
     name: string;
     email: string;
     serviceType: string;
     summary: string;
-    details: string;
-};
+    details?: string;
+}
