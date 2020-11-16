@@ -1,0 +1,68 @@
+.request-form
+  margin: 20px
+  min-width: 10%
+  max-width: 600px
+  padding: 15px
+  border: 2px solid #e2dfdf
+  border-radius: 4px
+  background-color: $color-white
+  margin: 20px auto
+
+  h2
+    font-weight: 400
+    text-align: center
+  &__input-container
+    margin-top: 20px
+    position: relative
+  &__input,
+  &__select
+    display: block
+    border: none
+    border-bottom: 1.8px solid $color-gray
+    width: 100%
+    font-size: 14px
+    padding: 5px 0
+    outline: none
+  &__label
+    display: block
+    font-size: 14px
+    transition: all 0.3s
+    position: absolute
+    color: $color-gray
+    top: 25%
+    left: 0
+    pointer-events: none
+  &__input:focus
+    border-bottom: 1.8px solid $color-primary-dark
+    &::placeholder
+      opacity: 0
+  &__input:placeholder-shown + &__label
+    opacity: 0
+  &__select:not(:placeholder-shown) + &__label,
+  &__input:not(:placeholder-shown) + &__label
+    opacity: 1
+    top: -10px
+    font-size: 10px
+    color: $color-primary
+  &__input:focus + &__label
+    opacity: 1
+    top: -10px
+    font-size: 10px
+    color: $color-primary
+
+.btn
+  background-color: $color-orange
+  color: $color-white
+  border: none
+  white-space: nowrap
+  outline: none
+  min-width: 64px
+  margin: 0
+  line-height: 36px
+  padding: 0 16px
+  border-radius: 4px
+  overflow: visible
+  cursor: pointer
+  font-size: 14px
+  font-weight: 500
+  margin-top: 15px

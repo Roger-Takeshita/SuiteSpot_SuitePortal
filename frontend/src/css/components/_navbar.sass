@@ -1,0 +1,33 @@
+.navbar
+  display: flex
+  flex-grow: 1
+  background-color: $color-primary
+  height: 64px
+  padding: 0 16px
+  align-items: center
+  justify-content: flex-start
+  white-space: nowrap
+
+  & > *
+    color: $color-white
+  &__logo
+    font-size: 24px
+    font-weight: 500
+    margin-right: 16px
+  &_spacer
+    width: 100%
+  a
+    font-size: 14px
+    text-decoration: none
+    font-weight: 500
+    cursor: pointer
+    display: inline-block
+    text-align: center
+    margin: 0
+    min-width: 64px
+    line-height: 36px
+    padding: 0 16px
+    border-radius: 4px
+
+    &:hover
+      background-color: rgba($color-black, 0.03)
