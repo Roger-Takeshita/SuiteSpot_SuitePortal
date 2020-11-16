@@ -21,25 +21,18 @@ export type User = {
     email: string;
 };
 
-export interface UserJWT {
-    _id: string;
-    email: string;
+export type UserJWT = User & {
     iat: number;
     exp: number;
-}
+};
 
 export type LoginForm = {
     email: string;
     password: string;
 };
 
-export type SignUpForm = {
-    email: string;
-    password: string;
-};
-
-export type DeleteForm = {
-    password: string;
+export type SignUpForm = LoginForm & {
+    confirmPassword: string;
 };
 
 export type JWTAccessFn = {
