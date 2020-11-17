@@ -9,7 +9,7 @@ const addData = async (url: string, data: {}) => {
 };
 
 const updateData = async (url: string, data: {}) => {
-    return await apiRequestHelper('POST', url, data);
+    return await apiRequestHelper('PUT', url, data);
 };
 
 const deleteData = async (url: string, data: {}) => {

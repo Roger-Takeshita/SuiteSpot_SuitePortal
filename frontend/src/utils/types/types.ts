@@ -47,6 +47,7 @@ export type FormSignUpProps = {
 };
 
 export interface MaintenanceRequest {
+    _id?: string;
     unitNumber: string;
     name: string;
     email: string;

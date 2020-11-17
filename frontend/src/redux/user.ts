@@ -1,4 +1,4 @@
-import { Action, ActionCreator, AnyAction } from 'redux';
+import { AnyAction } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 import * as tokenService from '../utils/api/tokenService';
 import * as reqService from '../utils/api/reqService';
@@ -7,7 +7,7 @@ import * as type from '../utils/types/types';
 const REMOVE_USER: string = 'REMOVE_USER';
 const LOGIN_USER: string = 'LOGIN_USER';
 
-export const removeUser: ActionCreator<Action> = () => ({
+export const removeUser = () => ({
     type: REMOVE_USER,
 });
 
