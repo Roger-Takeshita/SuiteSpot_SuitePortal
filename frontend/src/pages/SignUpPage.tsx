@@ -9,8 +9,12 @@ const SignUpPage: React.FC<type.SignUpPageProps> = ({ signUpUser }) => {
     const history = useHistory();
 
     const handleSubmit = async (data: type.SignupForm) => {
-        signUpUser(data);
-        history.push('/admin');
+        try {
+            signUpUser(data);
+            history.push('/admin');
+        } catch (error) {
+            console.log(error.message);
+        }
     };
 
     return <FormSignUp onSubmit={handleSubmit} />;

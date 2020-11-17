@@ -22,13 +22,14 @@ export const loginUser = (data: type.LoginForm) => {
                 type: LOGIN_USER,
             });
         } catch (error) {
-            throw new Error(error.message);
+            alert(error.message);
+            // throw new Error(error.message);
         }
     };
 };
 
 export const signUpUser = (data: type.SignupForm) => {
-    const url = 'http://localhost:3001/api/users/singup';
+    const url = 'http://localhost:3001/api/users/signup';
 
     return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
         try {
@@ -38,7 +39,8 @@ export const signUpUser = (data: type.SignupForm) => {
                 type: LOGIN_USER,
             });
         } catch (error) {
-            throw new Error(error.message);
+            alert(error.message);
+            // throw new Error(error.message);
         }
     };
 };

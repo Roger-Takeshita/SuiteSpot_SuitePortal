@@ -18,7 +18,7 @@ const signUpUser: RequestHandler = async (req, res) => {
         const newUser: type.UserI = new User(form);
         await newUser.save();
         const token = auth.createAccessToken(newUser);
-        return res.json({ token });
+        return res.json(token);
     } catch (error) {
         res.status(500).json({
             message:
@@ -39,7 +39,7 @@ const loginUser: RequestHandler = async (req, res) => {
         user.comparePassword(form.password, (_error, isMatch) => {
             if (isMatch) {
                 const token = auth.createAccessToken(user);
-                return res.json({ token });
+                return res.json(token);
             }
 
             res.status(403).json({ message: 'ERROR: Wrong credentials.' });

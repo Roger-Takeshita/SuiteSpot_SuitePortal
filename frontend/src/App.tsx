@@ -6,13 +6,14 @@ import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import { connect } from 'react-redux';
 import * as type from './utils/types/types';
+import AdminPage from './pages/AdminPage';
 
 const App: React.FC<type.AppProps> = ({ user }) => {
     const route =
         user && user.email ? (
             <Switch>
                 <Route exact path="/" component={HomePage} />
-                <Route exact path="/admin" component={LoginPage} />
+                <Route exact path="/admin" component={AdminPage} />
                 <Route render={() => <Redirect to={{ pathname: '/' }} />} />
             </Switch>
         ) : (

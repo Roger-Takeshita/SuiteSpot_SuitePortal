@@ -8,9 +8,13 @@ import { useHistory } from 'react-router-dom';
 const LoginPage: React.FC<type.LoginPageProps> = ({ loginUser }) => {
     const history = useHistory();
 
-    const handleSubmit = async (data: type.LoginForm) => {
-        loginUser(data);
-        history.push('/admin');
+    const handleSubmit = (data: type.LoginForm) => {
+        try {
+            loginUser(data);
+            history.push('/admin');
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return <FormLogin onSubmit={handleSubmit} />;

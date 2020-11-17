@@ -63,6 +63,7 @@ const FormSignUp: React.FC<type.FormSignUpProps> = ({ onSubmit }) => {
                         value={form.password}
                         onChange={handleChange}
                         placeholder="Password"
+                        minLength={4}
                         className="login-form__input"
                     />
                     <label className="login-form__label" htmlFor="password">
@@ -76,6 +77,7 @@ const FormSignUp: React.FC<type.FormSignUpProps> = ({ onSubmit }) => {
                         value={form.confirmPassword}
                         onChange={handleChange}
                         placeholder="Confirm Password"
+                        minLength={4}
                         className="login-form__input"
                     />
                     <label
