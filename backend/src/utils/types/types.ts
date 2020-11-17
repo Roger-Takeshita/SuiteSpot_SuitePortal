@@ -38,3 +38,23 @@ export type SignUpForm = LoginForm & {
 export type JWTAccessFn = {
     (user: User): string;
 };
+
+export interface MaintenanceRequest {
+    _id?: string;
+    unitNumber: string;
+    name: string;
+    email: string;
+    serviceType: string;
+    summary: string;
+    details?: string;
+}
+
+export interface RequestI extends Document {
+    _id: string;
+    unitNumber: string;
+    name: string;
+    email: string;
+    serviceType: string;
+    summary: string;
+    details?: string;
+}

@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const requestSchema = new Schema(
     {
         unitNumber: {
-            type: Number,
+            type: String,
             required: true,
             trim: true,
         },
@@ -49,4 +49,4 @@ requestSchema.set('toJSON', {
     },
 });
 
-export default mongoose.model<type.UserI>('User', requestSchema);
+export default mongoose.model<type.RequestI>('Request', requestSchema);
