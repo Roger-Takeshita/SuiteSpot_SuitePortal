@@ -9,6 +9,7 @@ const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
         serviceType: 'general',
         summary: '',
         details: '',
+        close: false,
     };
     const [form, setForm] = useState<type.MaintenanceRequest>(initialState);
 
@@ -40,6 +41,7 @@ const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
                         name="unitNumber"
                         value={form.unitNumber}
                         onChange={handleChange}
+                        required
                         placeholder="Apartment Unit #"
                     />
                     <label className="request-form__label" htmlFor="unitNumber">
@@ -53,6 +55,7 @@ const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
                         name="name"
                         value={form.name}
                         onChange={handleChange}
+                        required
                         placeholder="Requester Name"
                     />
                     <label className="request-form__label" htmlFor="name">
@@ -66,6 +69,7 @@ const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
                         name="email"
                         value={form.email}
                         onChange={handleChange}
+                        required
                         placeholder="Requester Email"
                     />
                     <label className="request-form__label" htmlFor="email">
@@ -78,6 +82,7 @@ const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
                         name="serviceType"
                         value={form.serviceType}
                         onChange={handleChange}
+                        required
                     >
                         <option value="general">general</option>
                         <option value="electrical">electrical</option>
@@ -95,6 +100,7 @@ const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
                         name="summary"
                         value={form.summary}
                         onChange={handleChange}
+                        required
                         placeholder="Summary"
                     />
                     <label className="request-form__label" htmlFor="summary">
@@ -108,6 +114,8 @@ const FormRequest: React.FC<type.FormRequestProps> = ({ onSubmit }) => {
                         value={form.details}
                         onChange={handleChange}
                         placeholder="Details"
+                        data-gramm="false"
+                        spellCheck="false"
                     />
                     <label className="request-form__label" htmlFor="details">
                         Details

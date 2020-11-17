@@ -34,6 +34,11 @@ export type LoginPageProps = {
     loginUser: (data: LoginForm) => void;
 };
 
+export type AdminPageProps = {
+    requests: MaintenanceRequest[];
+    getRequests: () => void;
+};
+
 export type FormRequestProps = {
     onSubmit: (data: MaintenanceRequest) => void;
 };
@@ -46,6 +51,11 @@ export type FormSignUpProps = {
     onSubmit: (data: SignupForm) => void;
 };
 
+export type ItemProps = {
+    data: MaintenanceRequest;
+    updateRequest: (data: MaintenanceRequest) => void;
+};
+
 export interface MaintenanceRequest {
     _id?: string;
     unitNumber: string;
@@ -54,4 +64,5 @@ export interface MaintenanceRequest {
     serviceType: string;
     summary: string;
     details?: string;
+    close?: boolean;
 }

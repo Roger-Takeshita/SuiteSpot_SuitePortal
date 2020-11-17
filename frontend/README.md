@@ -53,6 +53,7 @@
     touch src/css/styles.sass
     touch src/css/base/_base.sass
     touch src/css/components/_form.sass
+    touch src/css/components/_item.sass
     touch src/css/components/_navbar.sass
     touch src/pages/Home.tsx
     touch src/pages/SingUp.tsx
@@ -69,4 +70,5 @@
     touch src/components/FormLogin.tsx
     touch src/components/FormSignUp.tsx
     touch src/components/FormRequest.tsx
+    touch src/components/Item.tsx
   ```
