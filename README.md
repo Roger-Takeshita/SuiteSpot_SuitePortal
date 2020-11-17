@@ -1,7 +1,8 @@
 <h1 id='contents'>Table of Contents</h1>
 
 - [SUITESPOT_SUITEPORTAL](#suitespot_suiteportal)
-  - [Environment Variables](#environment-variables)
+  - [Project Setup](#project-setup)
+  - [Backend Environment Variables](#backend-environment-variables)
   - [Start Frontend](#start-frontend)
     - [Packages](#packages)
   - [Start Backend](#start-backend)
@@ -11,9 +12,26 @@
 
 # SUITESPOT_SUITEPORTAL
 
-## Environment Variables
+## Project Setup
 
 [Go Back to Contents](#contents)
+
+- Requirements
+  - Node.js
+    - Backend Environment Variables
+  - React.js
+  - MongoDB
+
+## Backend Environment Variables
+
+[Go Back to Contents](#contents)
+
+- Create folder and files
+
+  ```Bash
+    touch env/dev.env
+    touch env/test.env
+  ```
 
 - in `backend/env/dev.env`
 
@@ -152,9 +170,12 @@
 
   ```Bash
     cd backend
-    npm i
     npm run test
   ```
+
+- I've added a few simple tests, it's not covering all the cases
+
+  ![](https://i.imgur.com/dhifnTd.png)
 
 ## Postman
 

@@ -21,7 +21,7 @@ const addRequest: RequestHandler = async (req, res) => {
         form.serviceType.trim() === '' ||
         form.summary.trim() === ''
     ) {
-        res.status(400).json({ message: 'Invalid form' });
+        return res.status(400).json({ message: 'Invalid form' });
     }
 
     try {
