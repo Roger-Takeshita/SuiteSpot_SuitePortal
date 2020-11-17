@@ -21,7 +21,7 @@
 
 [Go Back to Contents](#contents)
 
-- Install production dependencies
+- Dependencies
 
   ```Bash
     npm i react-router-dom
@@ -32,7 +32,7 @@
     # redux thunk dependencies
   ```
 
-- Install dev dependencies (types)
+- Dev dependencies
 
   ```Bash
     npm i -D @types/react

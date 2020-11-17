@@ -6,6 +6,15 @@ import * as type from '../utils/types/types';
 const signUpUser: RequestHandler = async (req, res) => {
     const form: type.SignUpForm = req.body;
 
+    if (
+        form.email.trim() === '' ||
+        form.password.trim() === '' ||
+        form.confirmPassword.trim() === '' ||
+        form.password !== form.confirmPassword
+    ) {
+        return res.status(400).json({ message: 'Bad form request' });
+    }
+
     try {
         const user: type.UserI = await User.findOne({ email: form.email });
         if (user) {
@@ -14,11 +23,10 @@ const signUpUser: RequestHandler = async (req, res) => {
                 .json({ message: 'ERROR: Email already in use.' });
         }
 
-        console.log(form);
         const newUser: type.UserI = new User(form);
         await newUser.save();
         const token = auth.createAccessToken(newUser);
-        return res.json(token);
+        return res.status(201).json(token);
     } catch (error) {
         res.status(500).json({
             message:
@@ -29,6 +37,10 @@ const signUpUser: RequestHandler = async (req, res) => {
 
 const loginUser: RequestHandler = async (req, res) => {
     const form: type.LoginForm = req.body;
+
+    if (form.email.trim() === '' || form.password.trim() === '') {
+        return res.status(400).json({ message: 'Bad form request' });
+    }
 
     try {
         const user: type.UserI = await User.findOne({ email: form.email });

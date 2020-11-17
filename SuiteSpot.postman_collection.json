@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "9f677178-cfb7-4d82-90be-927dace172d6",
+		"name": "SuiteSpot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/users/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d6bd5eb1-0412-4af4-8a7d-8e90449333e1",
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    pm.environment.set('authToken', pm.response.json())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@email.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9451abf-58e0-4d46-a8e9-063768d50b71",
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    pm.environment.set('authToken', pm.response.json())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@email.com\",\n    \"password\": \"123456\",\n    \"confirmPassword\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/maintenance-requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/maintenance-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"maintenance-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/maintenance-requests/:id/close",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"5fb32950d00e904619e8f156\",\n    \"unitNumber\": \"123\",\n    \"name\": \"Roger Takeshita\",\n    \"email\": \"roger@gmail.com\",\n    \"serviceType\": \"general\",\n    \"summary\": \"1231231\",\n    \"details\": \"\",\n    \"close\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/maintenance-requests/5fb32950d00e904619e8f156/close",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"maintenance-requests",
+						"5fb32950d00e904619e8f156",
+						"close"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/maintenance-requests",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Roger Takeshita\",\n    \"email\": \"roger@test.com\",\n    \"unitNumber\": \"405\",\n    \"serviceType\": \"general\",\n    \"summary\": \"Dishwasher is leaking\",\n    \"Details\": \"The dishwasher is leaking since last week\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/maintenance-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"maintenance-requests"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a7918cff-7c40-47a3-aba7-4217a1b043b2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6630e857-1df7-4197-98ff-0fb4ad6ec384",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
