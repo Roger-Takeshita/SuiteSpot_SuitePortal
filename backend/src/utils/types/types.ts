@@ -47,14 +47,9 @@ export interface MaintenanceRequest {
     serviceType: string;
     summary: string;
     details?: string;
+    close?: boolean;
 }
 
-export interface RequestI extends Document {
+export interface RequestI extends Document, MaintenanceRequest {
     _id: string;
-    unitNumber: string;
-    name: string;
-    email: string;
-    serviceType: string;
-    summary: string;
-    details?: string;
 }

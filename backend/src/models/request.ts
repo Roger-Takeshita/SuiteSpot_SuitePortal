@@ -34,6 +34,9 @@ const requestSchema = new Schema(
             type: String,
             trim: true,
         },
+        close: {
+            type: Boolean,
+        },
     },
     {
         timestamps: true,

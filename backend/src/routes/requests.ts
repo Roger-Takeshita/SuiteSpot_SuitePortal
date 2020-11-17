@@ -9,6 +9,6 @@ router.post('/', requestCtrl.addRequest);
 
 //! Private
 router.get('/', auth, requestCtrl.getRequests);
-router.put('/:id/close', auth, requestCtrl.cancelRequest);
+router.put('/:id/close', auth, requestCtrl.closeRequest);
 
 export default router;

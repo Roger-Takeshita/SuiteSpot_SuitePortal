@@ -3,8 +3,12 @@ import Request from '../models/request';
 import * as type from '../utils/types/types';
 
 const getRequests: RequestHandler = async (req, res) => {
-    console.log('get request');
-    res.json({ message: 'your requests' });
+    try {
+        const docs: type.RequestI[] = await Request.find({});
+        res.json(docs);
+    } catch (error) {
+        res.status(500).json({ message: 'ERROR: Something went wrong.' });
+    }
 };
 
 const addRequest: RequestHandler = async (req, res) => {
@@ -20,19 +24,29 @@ const addRequest: RequestHandler = async (req, res) => {
         res.status(400).json({ message: 'Invalid form' });
     }
 
-    const newRequest: type.RequestI = new Request(form);
-    await newRequest.save();
-    res.status(201).json(newRequest);
+    try {
+        const newRequest: type.RequestI = new Request(form);
+        await newRequest.save();
+        res.status(201).json(newRequest);
+    } catch (error) {
+        res.status(500).json({ message: 'ERROR: Something went wrong.' });
+    }
 };
 
-const cancelRequest: RequestHandler = async (req, res) => {
-    const requestId = req.params.id;
-    console.log(requestId);
-    res.json({ message: `Request ${requestId} was closed.` });
+const closeRequest: RequestHandler = async (req, res) => {
+    try {
+        const requestId = req.params.id;
+        const request: type.RequestI = await Request.findById(requestId);
+        request.close = !request.close;
+        await request.save();
+        res.json(request);
+    } catch (error) {
+        res.status(500).json({ message: 'ERROR: Something went wrong.' });
+    }
 };
 
 export default {
     getRequests,
     addRequest,
-    cancelRequest,
+    closeRequest,
 };
