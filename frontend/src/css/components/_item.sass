@@ -1,0 +1,28 @@
+.item-header,
+.item
+  display: flex
+  border: 1px solid $color-black
+  text-align: center
+  align-items: center
+
+  & > :not(:last-child)
+    border-right: 1px solid $color-black
+  &__name
+    width: 200px
+  &__unit
+    width: 50px
+  &__service
+    width: 150px
+  &__summary
+    flex: 1
+    padding: 0 10px
+    text-align: left
+  &--close
+    text-decoration: line-through
+    color: $color-gray
+
+.item-header
+  padding: 5px 0
+  border: none
+  font-weight: bold
+  background-color: $color-gray
